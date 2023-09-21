@@ -28,6 +28,9 @@
 		10B196E42ABBC9CA00C8FDAD /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B196E22ABBC9CA00C8FDAD /* ProductListCell.xib */; };
 		10B196E82ABBCC1800C8FDAD /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196E62ABBCC1800C8FDAD /* CartCell.swift */; };
 		10B196E92ABBCC1800C8FDAD /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B196E72ABBCC1800C8FDAD /* CartCell.xib */; };
+		10B196EC2ABBD1B200C8FDAD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196EB2ABBD1B200C8FDAD /* MainTabBarController.swift */; };
+		10B196EE2ABBE19F00C8FDAD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196ED2ABBE19F00C8FDAD /* HomeVC.swift */; };
+		10B196F02ABBE1E800C8FDAD /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196EF2ABBE1E800C8FDAD /* CartVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		10B196E22ABBC9CA00C8FDAD /* ProductListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListCell.xib; sourceTree = "<group>"; };
 		10B196E62ABBCC1800C8FDAD /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		10B196E72ABBCC1800C8FDAD /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		10B196EB2ABBD1B200C8FDAD /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		10B196ED2ABBE19F00C8FDAD /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		10B196EF2ABBE1E800C8FDAD /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,7 @@
 				10B196D62ABBC6AE00C8FDAD /* Protocols */,
 				10B196CF2ABBC5E400C8FDAD /* Extensions */,
 				10B196B92ABAAB7600C8FDAD /* Views */,
+				10B196EA2ABBD11200C8FDAD /* Controllers */,
 				10B196B72ABAA70000C8FDAD /* Storyboards */,
 				10B196B82ABAA71E00C8FDAD /* Support Files */,
 			);
@@ -225,6 +232,16 @@
 				10B196E72ABBCC1800C8FDAD /* CartCell.xib */,
 			);
 			path = "Cart cell";
+			sourceTree = "<group>";
+		};
+		10B196EA2ABBD11200C8FDAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				10B196EB2ABBD1B200C8FDAD /* MainTabBarController.swift */,
+				10B196ED2ABBE19F00C8FDAD /* HomeVC.swift */,
+				10B196EF2ABBE1E800C8FDAD /* CartVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,12 +379,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B196D52ABBC67A00C8FDAD /* UICollectionView+Extension.swift in Sources */,
+				10B196EE2ABBE19F00C8FDAD /* HomeVC.swift in Sources */,
 				10B196852ABAA54F00C8FDAD /* AppDelegate.swift in Sources */,
 				10B196E32ABBC9CA00C8FDAD /* ProductListCell.swift in Sources */,
 				10B196CC2ABBC1F100C8FDAD /* ProductGridCell.swift in Sources */,
 				10B196DC2ABBC7C900C8FDAD /* NibLoadable.swift in Sources */,
 				10B196DE2ABBC7E300C8FDAD /* Reusable.swift in Sources */,
 				10B196D12ABBC60800C8FDAD /* UIStoryboard+Extension.swift in Sources */,
+				10B196F02ABBE1E800C8FDAD /* CartVC.swift in Sources */,
+				10B196EC2ABBD1B200C8FDAD /* MainTabBarController.swift in Sources */,
 				10B196E82ABBCC1800C8FDAD /* CartCell.swift in Sources */,
 				10B196D32ABBC63500C8FDAD /* UIViewController+Extension.swift in Sources */,
 				10B196D82ABBC6C800C8FDAD /* Instantiatable.swift in Sources */,
