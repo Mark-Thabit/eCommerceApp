@@ -15,6 +15,8 @@
 		10B1969F2ABAA55300C8FDAD /* eCommerceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1969E2ABAA55300C8FDAD /* eCommerceAppTests.swift */; };
 		10B196A92ABAA55300C8FDAD /* eCommerceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196A82ABAA55300C8FDAD /* eCommerceAppUITests.swift */; };
 		10B196AB2ABAA55300C8FDAD /* eCommerceAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196AA2ABAA55300C8FDAD /* eCommerceAppUITestsLaunchTests.swift */; };
+		10B196CC2ABBC1F100C8FDAD /* ProductGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196CA2ABBC1F100C8FDAD /* ProductGridCell.swift */; };
+		10B196CD2ABBC1F100C8FDAD /* ProductGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B196CB2ABBC1F100C8FDAD /* ProductGridCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		10B196A42ABAA55300C8FDAD /* eCommerceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eCommerceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B196A82ABAA55300C8FDAD /* eCommerceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eCommerceAppUITests.swift; sourceTree = "<group>"; };
 		10B196AA2ABAA55300C8FDAD /* eCommerceAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eCommerceAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10B196CA2ABBC1F100C8FDAD /* ProductGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridCell.swift; sourceTree = "<group>"; };
+		10B196CB2ABBC1F100C8FDAD /* ProductGridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductGridCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			children = (
 				10B1968D2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld */,
 				10B196842ABAA54F00C8FDAD /* AppDelegate.swift */,
+				10B196B92ABAAB7600C8FDAD /* Views */,
 				10B196B72ABAA70000C8FDAD /* Storyboards */,
 				10B196B82ABAA71E00C8FDAD /* Support Files */,
 			);
@@ -138,6 +143,15 @@
 				10B196952ABAA55200C8FDAD /* Info.plist */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		10B196B92ABAAB7600C8FDAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10B196CA2ABBC1F100C8FDAD /* ProductGridCell.swift */,
+				10B196CB2ABBC1F100C8FDAD /* ProductGridCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +261,7 @@
 				10B196942ABAA55200C8FDAD /* LaunchScreen.storyboard in Resources */,
 				10B196912ABAA55200C8FDAD /* Assets.xcassets in Resources */,
 				10B1968C2ABAA54F00C8FDAD /* Main.storyboard in Resources */,
+				10B196CD2ABBC1F100C8FDAD /* ProductGridCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B196852ABAA54F00C8FDAD /* AppDelegate.swift in Sources */,
+				10B196CC2ABBC1F100C8FDAD /* ProductGridCell.swift in Sources */,
 				10B1968F2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
