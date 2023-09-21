@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductGridCell: UICollectionViewCell {
+class ProductGridCell: UICollectionViewCell, NibReusable {
     
     // MARK: - IBOutlets
     

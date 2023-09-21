@@ -17,6 +17,13 @@
 		10B196AB2ABAA55300C8FDAD /* eCommerceAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196AA2ABAA55300C8FDAD /* eCommerceAppUITestsLaunchTests.swift */; };
 		10B196CC2ABBC1F100C8FDAD /* ProductGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196CA2ABBC1F100C8FDAD /* ProductGridCell.swift */; };
 		10B196CD2ABBC1F100C8FDAD /* ProductGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B196CB2ABBC1F100C8FDAD /* ProductGridCell.xib */; };
+		10B196D12ABBC60800C8FDAD /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196D02ABBC60800C8FDAD /* UIStoryboard+Extension.swift */; };
+		10B196D32ABBC63500C8FDAD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196D22ABBC63500C8FDAD /* UIViewController+Extension.swift */; };
+		10B196D52ABBC67A00C8FDAD /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196D42ABBC67A00C8FDAD /* UICollectionView+Extension.swift */; };
+		10B196D82ABBC6C800C8FDAD /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196D72ABBC6C800C8FDAD /* Instantiatable.swift */; };
+		10B196DA2ABBC6EF00C8FDAD /* StoryboardBasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196D92ABBC6EF00C8FDAD /* StoryboardBasedView.swift */; };
+		10B196DC2ABBC7C900C8FDAD /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196DB2ABBC7C900C8FDAD /* NibLoadable.swift */; };
+		10B196DE2ABBC7E300C8FDAD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196DD2ABBC7E300C8FDAD /* Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		10B196AA2ABAA55300C8FDAD /* eCommerceAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eCommerceAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		10B196CA2ABBC1F100C8FDAD /* ProductGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridCell.swift; sourceTree = "<group>"; };
 		10B196CB2ABBC1F100C8FDAD /* ProductGridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductGridCell.xib; sourceTree = "<group>"; };
+		10B196D02ABBC60800C8FDAD /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
+		10B196D22ABBC63500C8FDAD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		10B196D42ABBC67A00C8FDAD /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		10B196D72ABBC6C800C8FDAD /* Instantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
+		10B196D92ABBC6EF00C8FDAD /* StoryboardBasedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardBasedView.swift; sourceTree = "<group>"; };
+		10B196DB2ABBC7C900C8FDAD /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		10B196DD2ABBC7E300C8FDAD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,8 @@
 			children = (
 				10B1968D2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld */,
 				10B196842ABAA54F00C8FDAD /* AppDelegate.swift */,
+				10B196D62ABBC6AE00C8FDAD /* Protocols */,
+				10B196CF2ABBC5E400C8FDAD /* Extensions */,
 				10B196B92ABAAB7600C8FDAD /* Views */,
 				10B196B72ABAA70000C8FDAD /* Storyboards */,
 				10B196B82ABAA71E00C8FDAD /* Support Files */,
@@ -152,6 +168,27 @@
 				10B196CB2ABBC1F100C8FDAD /* ProductGridCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		10B196CF2ABBC5E400C8FDAD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				10B196D02ABBC60800C8FDAD /* UIStoryboard+Extension.swift */,
+				10B196D22ABBC63500C8FDAD /* UIViewController+Extension.swift */,
+				10B196D42ABBC67A00C8FDAD /* UICollectionView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		10B196D62ABBC6AE00C8FDAD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				10B196D92ABBC6EF00C8FDAD /* StoryboardBasedView.swift */,
+				10B196D72ABBC6C800C8FDAD /* Instantiatable.swift */,
+				10B196DB2ABBC7C900C8FDAD /* NibLoadable.swift */,
+				10B196DD2ABBC7E300C8FDAD /* Reusable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,9 +323,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B196D52ABBC67A00C8FDAD /* UICollectionView+Extension.swift in Sources */,
 				10B196852ABAA54F00C8FDAD /* AppDelegate.swift in Sources */,
 				10B196CC2ABBC1F100C8FDAD /* ProductGridCell.swift in Sources */,
+				10B196DC2ABBC7C900C8FDAD /* NibLoadable.swift in Sources */,
+				10B196DE2ABBC7E300C8FDAD /* Reusable.swift in Sources */,
+				10B196D12ABBC60800C8FDAD /* UIStoryboard+Extension.swift in Sources */,
+				10B196D32ABBC63500C8FDAD /* UIViewController+Extension.swift in Sources */,
+				10B196D82ABBC6C800C8FDAD /* Instantiatable.swift in Sources */,
 				10B1968F2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld in Sources */,
+				10B196DA2ABBC6EF00C8FDAD /* StoryboardBasedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
