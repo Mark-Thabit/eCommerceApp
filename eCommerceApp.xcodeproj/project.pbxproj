@@ -24,6 +24,8 @@
 		10B196DA2ABBC6EF00C8FDAD /* StoryboardBasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196D92ABBC6EF00C8FDAD /* StoryboardBasedView.swift */; };
 		10B196DC2ABBC7C900C8FDAD /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196DB2ABBC7C900C8FDAD /* NibLoadable.swift */; };
 		10B196DE2ABBC7E300C8FDAD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196DD2ABBC7E300C8FDAD /* Reusable.swift */; };
+		10B196E32ABBC9CA00C8FDAD /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196E12ABBC9CA00C8FDAD /* ProductListCell.swift */; };
+		10B196E42ABBC9CA00C8FDAD /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B196E22ABBC9CA00C8FDAD /* ProductListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		10B196D92ABBC6EF00C8FDAD /* StoryboardBasedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardBasedView.swift; sourceTree = "<group>"; };
 		10B196DB2ABBC7C900C8FDAD /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		10B196DD2ABBC7E300C8FDAD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		10B196E12ABBC9CA00C8FDAD /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		10B196E22ABBC9CA00C8FDAD /* ProductListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +168,8 @@
 		10B196B92ABAAB7600C8FDAD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				10B196CA2ABBC1F100C8FDAD /* ProductGridCell.swift */,
-				10B196CB2ABBC1F100C8FDAD /* ProductGridCell.xib */,
+				10B196E02ABBC9AB00C8FDAD /* Product list cell */,
+				10B196DF2ABBC99A00C8FDAD /* Product grid cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +193,24 @@
 				10B196DD2ABBC7E300C8FDAD /* Reusable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		10B196DF2ABBC99A00C8FDAD /* Product grid cell */ = {
+			isa = PBXGroup;
+			children = (
+				10B196CA2ABBC1F100C8FDAD /* ProductGridCell.swift */,
+				10B196CB2ABBC1F100C8FDAD /* ProductGridCell.xib */,
+			);
+			path = "Product grid cell";
+			sourceTree = "<group>";
+		};
+		10B196E02ABBC9AB00C8FDAD /* Product list cell */ = {
+			isa = PBXGroup;
+			children = (
+				10B196E12ABBC9CA00C8FDAD /* ProductListCell.swift */,
+				10B196E22ABBC9CA00C8FDAD /* ProductListCell.xib */,
+			);
+			path = "Product list cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B196942ABAA55200C8FDAD /* LaunchScreen.storyboard in Resources */,
+				10B196E42ABBC9CA00C8FDAD /* ProductListCell.xib in Resources */,
 				10B196912ABAA55200C8FDAD /* Assets.xcassets in Resources */,
 				10B1968C2ABAA54F00C8FDAD /* Main.storyboard in Resources */,
 				10B196CD2ABBC1F100C8FDAD /* ProductGridCell.xib in Resources */,
@@ -325,6 +348,7 @@
 			files = (
 				10B196D52ABBC67A00C8FDAD /* UICollectionView+Extension.swift in Sources */,
 				10B196852ABAA54F00C8FDAD /* AppDelegate.swift in Sources */,
+				10B196E32ABBC9CA00C8FDAD /* ProductListCell.swift in Sources */,
 				10B196CC2ABBC1F100C8FDAD /* ProductGridCell.swift in Sources */,
 				10B196DC2ABBC7C900C8FDAD /* NibLoadable.swift in Sources */,
 				10B196DE2ABBC7E300C8FDAD /* Reusable.swift in Sources */,
