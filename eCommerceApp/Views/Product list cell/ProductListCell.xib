@@ -16,33 +16,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="295" height="108"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYQ-N5-5kl">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYQ-N5-5kl">
                         <rect key="frame" x="0.0" y="0.0" width="295" height="108"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QmJ-10-KPT">
                                 <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QmJ-10-KPT" secondAttribute="height" id="Nzs-Zi-SHF"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="B0n-yf-YwW">
-                                <rect key="frame" x="118" y="35.666666666666664" width="167" height="36.999999999999993"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="B0n-yf-YwW">
+                                <rect key="frame" x="123" y="33.666666666666664" width="162" height="40.999999999999993"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAl-UG-wE4">
-                                        <rect key="frame" x="0.0" y="0.0" width="167" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ME-JU-iQQ">
-                                        <rect key="frame" x="0.0" y="21.333333333333336" width="167" height="15.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="25.333333333333339" width="162" height="15.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="011-iZ-LPT">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="011-iZ-LPT">
                                 <rect key="frame" x="44" y="44" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -57,7 +58,7 @@
                             <constraint firstItem="QmJ-10-KPT" firstAttribute="leading" secondItem="VYQ-N5-5kl" secondAttribute="leading" id="c9o-WE-OQF"/>
                             <constraint firstItem="011-iZ-LPT" firstAttribute="centerX" secondItem="QmJ-10-KPT" secondAttribute="centerX" id="dRb-Xd-IcV"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="B0n-yf-YwW" secondAttribute="bottom" constant="5" id="tGX-E6-SgS"/>
-                            <constraint firstItem="B0n-yf-YwW" firstAttribute="leading" secondItem="QmJ-10-KPT" secondAttribute="trailing" constant="10" id="yEo-p9-Vrn"/>
+                            <constraint firstItem="B0n-yf-YwW" firstAttribute="leading" secondItem="QmJ-10-KPT" secondAttribute="trailing" constant="15" id="yEo-p9-Vrn"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -67,10 +68,11 @@
                 <constraint firstItem="VYQ-N5-5kl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4zp-d1-eMt"/>
                 <constraint firstItem="VYQ-N5-5kl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8Am-zf-aEW"/>
                 <constraint firstAttribute="trailing" secondItem="VYQ-N5-5kl" secondAttribute="trailing" id="cgW-43-kCC"/>
-                <constraint firstAttribute="bottom" secondItem="VYQ-N5-5kl" secondAttribute="bottom" id="yYa-kZ-Iz8"/>
+                <constraint firstAttribute="bottom" secondItem="VYQ-N5-5kl" secondAttribute="bottom" priority="999" id="yYa-kZ-Iz8"/>
             </constraints>
             <size key="customSize" width="295" height="108"/>
             <connections>
+                <outlet property="containerView" destination="VYQ-N5-5kl" id="6hb-E3-7sz"/>
                 <outlet property="loadingView" destination="011-iZ-LPT" id="KyW-Zz-PhC"/>
                 <outlet property="priceLbl" destination="6ME-JU-iQQ" id="BEk-dY-TPX"/>
                 <outlet property="productImageView" destination="QmJ-10-KPT" id="chT-Ie-Nn5"/>

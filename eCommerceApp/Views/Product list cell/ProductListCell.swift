@@ -11,6 +11,7 @@ class ProductListCell: UICollectionViewCell, NibReusable {
     
     // MARK: - IBOutlets
     
+    @IBOutlet var containerView: UIView!
     @IBOutlet var productImageView: UIImageView!
     @IBOutlet var loadingView: UIActivityIndicatorView!
     @IBOutlet var titleLbl: UILabel!
@@ -27,7 +28,17 @@ class ProductListCell: UICollectionViewCell, NibReusable {
     // MARK: - Helper Methods
     
     private func setupUI() {
-        loadingView.startAnimating()
-        loadingView.hidesWhenStopped = true
+        setupFonts()
+        setupContainerViewStyle()
+    }
+    
+    private func setupFonts() {
+        titleLbl.font = .systemFont(ofSize: 20, weight: .semibold)
+        priceLbl.font = .systemFont(ofSize: 20, weight: .bold)
+    }
+    
+    private func setupContainerViewStyle() {
+        containerView.backgroundColor = UIColor(white: 0.9, alpha: 0.8)
+        containerView.layer.cornerRadius = 25
     }
 }
