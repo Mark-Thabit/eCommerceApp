@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1037A3F22ABCF4050038068E /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3F12ABCF4050038068E /* Interceptor.swift */; };
+		1037A3F42ABCF4720038068E /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3F32ABCF4720038068E /* NetworkOperation.swift */; };
+		1037A3F62ABCF4950038068E /* FailureHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3F52ABCF4950038068E /* FailureHandlerDelegate.swift */; };
+		1037A3F82ABCF63B0038068E /* RequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3F72ABCF63B0038068E /* RequestOperation.swift */; };
+		1037A3FA2ABCF6550038068E /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3F92ABCF6550038068E /* HTTPRequest.swift */; };
+		1037A3FC2ABCF67A0038068E /* Alamofire.DataRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3FB2ABCF67A0038068E /* Alamofire.DataRequest+Extension.swift */; };
+		1037A3FE2ABCFA150038068E /* ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3FD2ABCFA150038068E /* ServerAPI.swift */; };
+		1037A4002ABCFA8C0038068E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3FF2ABCFA8C0038068E /* Constants.swift */; };
 		10B196852ABAA54F00C8FDAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196842ABAA54F00C8FDAD /* AppDelegate.swift */; };
 		10B1968C2ABAA54F00C8FDAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B1968A2ABAA54F00C8FDAD /* Main.storyboard */; };
 		10B1968F2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10B1968D2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld */; };
@@ -32,6 +40,11 @@
 		10B196EE2ABBE19F00C8FDAD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196ED2ABBE19F00C8FDAD /* HomeVC.swift */; };
 		10B196F02ABBE1E800C8FDAD /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196EF2ABBE1E800C8FDAD /* CartVC.swift */; };
 		10B196F32ABC05D400C8FDAD /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196F22ABC05D400C8FDAD /* Product.swift */; };
+		10B196F82ABCEF5D00C8FDAD /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196F72ABCEF5D00C8FDAD /* RequestError.swift */; };
+		10B196FA2ABCEF7500C8FDAD /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196F92ABCEF7500C8FDAD /* Connectivity.swift */; };
+		10B196FC2ABCEF9800C8FDAD /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196FB2ABCEF9800C8FDAD /* NetworkLogger.swift */; };
+		10B196FE2ABCEFBE00C8FDAD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196FD2ABCEFBE00C8FDAD /* Logger.swift */; };
+		10B197022ABCF0A500C8FDAD /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B197012ABCF0A500C8FDAD /* Request.swift */; };
 		53973C6B0D185D46785894D4 /* Pods_eCommerceAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F7B648133FE8F70B92043F /* Pods_eCommerceAppUITests.framework */; };
 		CB87A0F71D4FEBA664352A8F /* Pods_eCommerceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C65916B7E030E7D671330AF /* Pods_eCommerceAppTests.framework */; };
 		D938253EADB7ABD8C3506302 /* Pods_eCommerceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D03AB5DBC24F33C98E90BEE /* Pods_eCommerceApp.framework */; };
@@ -56,6 +69,14 @@
 
 /* Begin PBXFileReference section */
 		03EF0AF60E5504EA73D76C17 /* Pods-eCommerceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eCommerceApp.debug.xcconfig"; path = "Target Support Files/Pods-eCommerceApp/Pods-eCommerceApp.debug.xcconfig"; sourceTree = "<group>"; };
+		1037A3F12ABCF4050038068E /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		1037A3F32ABCF4720038068E /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		1037A3F52ABCF4950038068E /* FailureHandlerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureHandlerDelegate.swift; sourceTree = "<group>"; };
+		1037A3F72ABCF63B0038068E /* RequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOperation.swift; sourceTree = "<group>"; };
+		1037A3F92ABCF6550038068E /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		1037A3FB2ABCF67A0038068E /* Alamofire.DataRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire.DataRequest+Extension.swift"; sourceTree = "<group>"; };
+		1037A3FD2ABCFA150038068E /* ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAPI.swift; sourceTree = "<group>"; };
+		1037A3FF2ABCFA8C0038068E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		10B196812ABAA54F00C8FDAD /* eCommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eCommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B196842ABAA54F00C8FDAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10B1968B2ABAA54F00C8FDAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +106,11 @@
 		10B196ED2ABBE19F00C8FDAD /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		10B196EF2ABBE1E800C8FDAD /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		10B196F22ABC05D400C8FDAD /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		10B196F72ABCEF5D00C8FDAD /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		10B196F92ABCEF7500C8FDAD /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		10B196FB2ABCEF9800C8FDAD /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		10B196FD2ABCEFBE00C8FDAD /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		10B197012ABCF0A500C8FDAD /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		1173ACE58A822B7EB77948E4 /* Pods-eCommerceApp-eCommerceAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eCommerceApp-eCommerceAppUITests.release.xcconfig"; path = "Target Support Files/Pods-eCommerceApp-eCommerceAppUITests/Pods-eCommerceApp-eCommerceAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C65916B7E030E7D671330AF /* Pods_eCommerceAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eCommerceAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ED9910807CE7F7D1380430A /* Pods-eCommerceAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eCommerceAppTests.debug.xcconfig"; path = "Target Support Files/Pods-eCommerceAppTests/Pods-eCommerceAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,8 +178,8 @@
 			children = (
 				10B1968D2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld */,
 				10B196842ABAA54F00C8FDAD /* AppDelegate.swift */,
+				10B196FF2ABCEFEC00C8FDAD /* Services */,
 				10B196D62ABBC6AE00C8FDAD /* Protocols */,
-				10B196F42ABCE9F900C8FDAD /* Networking */,
 				10B196CF2ABBC5E400C8FDAD /* Extensions */,
 				10B196F12ABC05C100C8FDAD /* Model */,
 				10B196B92ABAAB7600C8FDAD /* Views */,
@@ -212,6 +238,7 @@
 		10B196CF2ABBC5E400C8FDAD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1037A3FB2ABCF67A0038068E /* Alamofire.DataRequest+Extension.swift */,
 				10B196D02ABBC60800C8FDAD /* UIStoryboard+Extension.swift */,
 				10B196D22ABBC63500C8FDAD /* UIViewController+Extension.swift */,
 				10B196D42ABBC67A00C8FDAD /* UICollectionView+Extension.swift */,
@@ -226,6 +253,8 @@
 				10B196D72ABBC6C800C8FDAD /* Instantiatable.swift */,
 				10B196DB2ABBC7C900C8FDAD /* NibLoadable.swift */,
 				10B196DD2ABBC7E300C8FDAD /* Reusable.swift */,
+				10B197012ABCF0A500C8FDAD /* Request.swift */,
+				1037A3F52ABCF4950038068E /* FailureHandlerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -278,8 +307,34 @@
 		10B196F42ABCE9F900C8FDAD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				10B196F92ABCEF7500C8FDAD /* Connectivity.swift */,
+				1037A3FD2ABCFA150038068E /* ServerAPI.swift */,
+				1037A3F92ABCF6550038068E /* HTTPRequest.swift */,
+				10B196F72ABCEF5D00C8FDAD /* RequestError.swift */,
+				10B196FB2ABCEF9800C8FDAD /* NetworkLogger.swift */,
+				1037A3F12ABCF4050038068E /* Interceptor.swift */,
+				1037A3F32ABCF4720038068E /* NetworkOperation.swift */,
+				1037A3F72ABCF63B0038068E /* RequestOperation.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		10B196FF2ABCEFEC00C8FDAD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				10B197002ABCEFFA00C8FDAD /* Utilities */,
+				10B196F42ABCE9F900C8FDAD /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		10B197002ABCEFFA00C8FDAD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				10B196FD2ABCEFBE00C8FDAD /* Logger.swift */,
+				1037A3FF2ABCFA8C0038068E /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		2B9D89E2998051932955199C /* Pods */ = {
@@ -531,21 +586,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1037A3F62ABCF4950038068E /* FailureHandlerDelegate.swift in Sources */,
 				10B196D52ABBC67A00C8FDAD /* UICollectionView+Extension.swift in Sources */,
 				10B196EE2ABBE19F00C8FDAD /* HomeVC.swift in Sources */,
+				1037A3FA2ABCF6550038068E /* HTTPRequest.swift in Sources */,
+				10B196FA2ABCEF7500C8FDAD /* Connectivity.swift in Sources */,
+				1037A4002ABCFA8C0038068E /* Constants.swift in Sources */,
 				10B196852ABAA54F00C8FDAD /* AppDelegate.swift in Sources */,
+				10B197022ABCF0A500C8FDAD /* Request.swift in Sources */,
+				1037A3F22ABCF4050038068E /* Interceptor.swift in Sources */,
 				10B196E32ABBC9CA00C8FDAD /* ProductListCell.swift in Sources */,
 				10B196CC2ABBC1F100C8FDAD /* ProductGridCell.swift in Sources */,
 				10B196DC2ABBC7C900C8FDAD /* NibLoadable.swift in Sources */,
+				1037A3FE2ABCFA150038068E /* ServerAPI.swift in Sources */,
 				10B196DE2ABBC7E300C8FDAD /* Reusable.swift in Sources */,
 				10B196D12ABBC60800C8FDAD /* UIStoryboard+Extension.swift in Sources */,
+				10B196FC2ABCEF9800C8FDAD /* NetworkLogger.swift in Sources */,
 				10B196F02ABBE1E800C8FDAD /* CartVC.swift in Sources */,
+				1037A3F82ABCF63B0038068E /* RequestOperation.swift in Sources */,
+				1037A3F42ABCF4720038068E /* NetworkOperation.swift in Sources */,
 				10B196F32ABC05D400C8FDAD /* Product.swift in Sources */,
 				10B196EC2ABBD1B200C8FDAD /* MainTabBarController.swift in Sources */,
 				10B196E82ABBCC1800C8FDAD /* CartCell.swift in Sources */,
 				10B196D32ABBC63500C8FDAD /* UIViewController+Extension.swift in Sources */,
+				10B196FE2ABCEFBE00C8FDAD /* Logger.swift in Sources */,
+				1037A3FC2ABCF67A0038068E /* Alamofire.DataRequest+Extension.swift in Sources */,
 				10B196D82ABBC6C800C8FDAD /* Instantiatable.swift in Sources */,
 				10B1968F2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld in Sources */,
+				10B196F82ABCEF5D00C8FDAD /* RequestError.swift in Sources */,
 				10B196DA2ABBC6EF00C8FDAD /* StoryboardBasedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -727,9 +795,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://fakestoreapi.com";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MG7UQMKDVD;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "eCommerceApp/Support Files/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
@@ -757,9 +827,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://fakestoreapi.com";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MG7UQMKDVD;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "eCommerceApp/Support Files/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
