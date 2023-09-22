@@ -22,6 +22,7 @@ class MainTabBarController: UITabBarController {
     private func setupTabBarController() {
         setViewControllers(initializeViewControllerList(), animated: true)
         selectedIndex = 0
+        tabBar.tintColor = .black
     }
     
     private func initializeViewControllerList() -> [UIViewController] {

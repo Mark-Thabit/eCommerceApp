@@ -6,24 +6,42 @@
 //
 
 import UIKit
+import CoreData
 
-extension Product {
-    static var dummyList: [Product] {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+class Product: NSManagedObject, Decodable {
+    
+    // MARK: - Computed Properties
+    
+    var formattedCurrency: String? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = "$"
+        return formatter.string(from: price as NSNumber)
+    }
+    
+    // MARK: - Coding keys
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case imagePath = "image"
+        case price
+        case desc = "description"
+        case category
+    }
+    
+    // MARK: - Initializers
+    
+    required convenience init(from decoder: Decoder) throws {
+        self.init(context: CoreData.persistentContainer.viewContext)
         
-        var list: [Product] = []
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        for index in 0...10 {
-            let product = Product(context: appDelegate.persistentContainer.viewContext)
-            product.id = Int64(index)
-            product.title = "long product name with two lines"
-            product.imagePath = "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-            product.desc = "Some Desc"
-            product.price = 12.5
-        
-            list.append(product)
-        }
-        
-        return list
+        id = try container.decode(Int64.self, forKey: .id)
+        title = try container.decode(String.self, forKey: .title)
+        imagePath = try container.decode(String.self, forKey: .imagePath)
+        price = try container.decode(Double.self, forKey: .price)
+        desc = try container.decode(String.self, forKey: .desc)
+        category = try container.decode(String.self, forKey: .category)
     }
 }

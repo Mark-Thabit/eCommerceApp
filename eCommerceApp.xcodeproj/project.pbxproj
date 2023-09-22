@@ -15,6 +15,8 @@
 		1037A3FC2ABCF67A0038068E /* Alamofire.DataRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3FB2ABCF67A0038068E /* Alamofire.DataRequest+Extension.swift */; };
 		1037A3FE2ABCFA150038068E /* ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3FD2ABCFA150038068E /* ServerAPI.swift */; };
 		1037A4002ABCFA8C0038068E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A3FF2ABCFA8C0038068E /* Constants.swift */; };
+		1037A4032ABD14E20038068E /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A4022ABD14E20038068E /* CoreData.swift */; };
+		1037A4052ABD18A10038068E /* OperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037A4042ABD18A10038068E /* OperationManager.swift */; };
 		10B196852ABAA54F00C8FDAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196842ABAA54F00C8FDAD /* AppDelegate.swift */; };
 		10B1968C2ABAA54F00C8FDAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B1968A2ABAA54F00C8FDAD /* Main.storyboard */; };
 		10B1968F2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10B1968D2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld */; };
@@ -77,6 +79,8 @@
 		1037A3FB2ABCF67A0038068E /* Alamofire.DataRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire.DataRequest+Extension.swift"; sourceTree = "<group>"; };
 		1037A3FD2ABCFA150038068E /* ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAPI.swift; sourceTree = "<group>"; };
 		1037A3FF2ABCFA8C0038068E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1037A4022ABD14E20038068E /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		1037A4042ABD18A10038068E /* OperationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationManager.swift; sourceTree = "<group>"; };
 		10B196812ABAA54F00C8FDAD /* eCommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eCommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B196842ABAA54F00C8FDAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10B1968B2ABAA54F00C8FDAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1037A4012ABD0DEB0038068E /* Local Store */ = {
+			isa = PBXGroup;
+			children = (
+				10B1968D2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld */,
+				1037A4022ABD14E20038068E /* CoreData.swift */,
+			);
+			path = "Local Store";
+			sourceTree = "<group>";
+		};
 		10B196782ABAA54F00C8FDAD = {
 			isa = PBXGroup;
 			children = (
@@ -176,8 +189,8 @@
 		10B196832ABAA54F00C8FDAD /* eCommerceApp */ = {
 			isa = PBXGroup;
 			children = (
-				10B1968D2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld */,
 				10B196842ABAA54F00C8FDAD /* AppDelegate.swift */,
+				1037A4012ABD0DEB0038068E /* Local Store */,
 				10B196FF2ABCEFEC00C8FDAD /* Services */,
 				10B196D62ABBC6AE00C8FDAD /* Protocols */,
 				10B196CF2ABBC5E400C8FDAD /* Extensions */,
@@ -315,6 +328,7 @@
 				1037A3F12ABCF4050038068E /* Interceptor.swift */,
 				1037A3F32ABCF4720038068E /* NetworkOperation.swift */,
 				1037A3F72ABCF63B0038068E /* RequestOperation.swift */,
+				1037A4042ABD18A10038068E /* OperationManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -590,6 +604,7 @@
 				10B196D52ABBC67A00C8FDAD /* UICollectionView+Extension.swift in Sources */,
 				10B196EE2ABBE19F00C8FDAD /* HomeVC.swift in Sources */,
 				1037A3FA2ABCF6550038068E /* HTTPRequest.swift in Sources */,
+				1037A4032ABD14E20038068E /* CoreData.swift in Sources */,
 				10B196FA2ABCEF7500C8FDAD /* Connectivity.swift in Sources */,
 				1037A4002ABCFA8C0038068E /* Constants.swift in Sources */,
 				10B196852ABAA54F00C8FDAD /* AppDelegate.swift in Sources */,
@@ -614,6 +629,7 @@
 				10B196D82ABBC6C800C8FDAD /* Instantiatable.swift in Sources */,
 				10B1968F2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld in Sources */,
 				10B196F82ABCEF5D00C8FDAD /* RequestError.swift in Sources */,
+				1037A4052ABD18A10038068E /* OperationManager.swift in Sources */,
 				10B196DA2ABBC6EF00C8FDAD /* StoryboardBasedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

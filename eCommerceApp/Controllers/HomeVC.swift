@@ -28,7 +28,7 @@ class HomeVC: UIViewController, Instantiatable {
     }
     
     private var dataSource: UICollectionViewDiffableDataSource<Section, Product>? = nil
-    private var productList = Product.dummyList
+    private var productList: [Product] = []
     
     private lazy var layoutBarButton: UIBarButtonItem = {
         let item = UIBarButtonItem(image: UIImage(systemName: "rectangle.grid.1x2"),
@@ -54,6 +54,19 @@ class HomeVC: UIViewController, Instantiatable {
         super.viewDidLoad()
 
         setupUI()
+        fetchProductList()
+    }
+    
+    func fetchProductList() {
+        let fetchOperation = RequestOperation(request: ServerAPI.fetchProductList, decodeType: [Product].self)
+        fetchOperation.successHandler = { [weak self] list in
+            guard let self else { return }
+            
+            self.productList = list
+            self.dataSource?.apply(snapshotForCurrentState(), animatingDifferences: true, completion: nil)
+        }
+        
+        OperationManager.shared.addOperation(fetchOperation)
     }
     
     // MARK: - Helper Methods
@@ -85,10 +98,11 @@ class HomeVC: UIViewController, Instantiatable {
             
             if isGridLayout {
                 let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ProductGridCell.self)
-                cell.titleLbl.text = "Product Name with tooo long name"
+                cell.product = productList[indexPath.row]
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ProductListCell.self)
+                cell.product = productList[indexPath.row]
                 return cell
             }
         })

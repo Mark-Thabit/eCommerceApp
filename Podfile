@@ -9,6 +9,7 @@ target 'eCommerceApp' do
   # Pods for eCommerceApp
   pod 'Alamofire'
   pod 'SnapKit'
+  pod 'SDWebImage'
 
   target 'eCommerceAppTests' do
     inherit! :search_paths
