@@ -17,6 +17,7 @@ struct Product: Decodable {
     let price: Double
     let desc: String
     let category: String
+    let rating: Rating
     
     // MARK: - Computed Properties
     
@@ -36,6 +37,7 @@ struct Product: Decodable {
         case price
         case desc = "description"
         case category
+        case rating
     }
     
     // MARK: - Initializers
@@ -49,12 +51,17 @@ struct Product: Decodable {
         price = try container.decode(Double.self, forKey: .price)
         desc = try container.decode(String.self, forKey: .desc)
         category = try container.decode(String.self, forKey: .category)
+        rating = try container.decode(Rating.self, forKey: .rating)
     }
 }
 
 // MARK: - Hashable
 
 extension Product: Hashable {
+    static func == (lhs: Product, rhs: Product) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

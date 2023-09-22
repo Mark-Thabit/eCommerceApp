@@ -90,6 +90,7 @@ class HomeVC: UIViewController, Instantiatable {
     }
     
     private func setupCollectionView() {
+        collectionView.delegate = self
         collectionView.register(cellType: ProductGridCell.self)
         collectionView.register(cellType: ProductListCell.self)
         collectionView.collectionViewLayout = generateLayout()
@@ -209,6 +210,16 @@ extension HomeVC: UISearchResultsUpdating {
         }
         
         updateCollectionData()
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension HomeVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = ProductDetailsVC.instance as? ProductDetailsVC else { return }
+        vc.product = inFilterMode ? filteredList[indexPath.row] : productList[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

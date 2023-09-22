@@ -28,10 +28,12 @@ class MainTabBarController: UITabBarController {
     private func initializeViewControllerList() -> [UIViewController] {
         // Home
         let homeNavController = UINavigationController(rootViewController: HomeVC.instance)
+        homeNavController.navigationBar.tintColor = .black
         homeNavController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
         
         // Cart
         let cartNavController = UINavigationController(rootViewController: CartVC.instance)
+        cartNavController.navigationBar.tintColor = .black
         cartNavController.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "cart"), selectedImage: UIImage(systemName: "cart.fill"))
         
         return [homeNavController, cartNavController]
