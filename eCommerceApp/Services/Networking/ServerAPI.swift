@@ -9,6 +9,8 @@ import Alamofire
 
 enum ServerAPI {
     case fetchProductList
+    case fetchCategoryList
+    case fetchCategoryProductList(category: String)
 }
 
 extension ServerAPI: Request {
@@ -17,12 +19,16 @@ extension ServerAPI: Request {
     var path: String {
         switch self {
             case .fetchProductList: "/products"
+            case .fetchCategoryList: "/products/categories"
+            case let .fetchCategoryProductList(category): "/products/category/\(category)"
         }
     }
     
     var method: HTTPMethod {
         switch self {
             case .fetchProductList: .get
+            case .fetchCategoryList: .get
+            case .fetchCategoryProductList: .get
         }
     }
     
@@ -31,6 +37,8 @@ extension ServerAPI: Request {
         
         switch self {
             case .fetchProductList: break
+            case .fetchCategoryList: break
+            case .fetchCategoryProductList: break
         }
         
         return parameters

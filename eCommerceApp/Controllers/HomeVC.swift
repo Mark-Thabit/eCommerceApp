@@ -148,8 +148,26 @@ class HomeVC: UIViewController, Instantiatable {
         OperationManager.shared.addOperation(fetchOperation)
     }
     
+    private func fetchProductList(for category: String) {
+        let fetchRequest = RequestOperation(request: ServerAPI.fetchCategoryProductList(category: category), decodeType: [Product].self)
+        
+        fetchRequest.successHandler = { [weak self] list in
+            guard let self else { return }
+            
+            self.productList = list
+            self.updateCollectionData()
+        }
+        
+        OperationManager.shared.addOperation(fetchRequest)
+    }
+    
     private func updateCollectionData() {
         dataSource?.apply(snapshotForCurrentState(), animatingDifferences: true, completion: nil)
+    }
+    
+    private func reset() {
+        productList.removeAll()
+        updateCollectionData()
     }
     
     // MARK: - Target Actions
@@ -166,7 +184,9 @@ class HomeVC: UIViewController, Instantiatable {
     
     @objc
     private func filterBarButtonTapped(_ sender: UIBarButtonItem) {
-        
+        guard let vc = CategoryListVC.instance as? CategoryListVC else { return }
+        vc.delegate = self
+        present(vc, animated: true)
     }
 }
 
@@ -189,5 +209,21 @@ extension HomeVC: UISearchResultsUpdating {
         }
         
         updateCollectionData()
+    }
+}
+
+// MARK: - CategoryListDelegate
+
+extension HomeVC: CategoryListDelegate {
+    func categoryListResetTapped(_ categoryList: CategoryListVC) {
+        reset()
+        fetchProductList()
+        dismiss(animated: true)
+    }
+    
+    func categoryList(_ categoryList: CategoryListVC, userDidPick category: String) {
+        reset()
+        fetchProductList(for: category)
+        dismiss(animated: true)
     }
 }
