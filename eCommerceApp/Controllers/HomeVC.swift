@@ -23,12 +23,18 @@ class HomeVC: UIViewController, Instantiatable {
     private var isGridLayout = true {
         didSet {
             collectionView.reloadData()
-            collectionView.setCollectionViewLayout(generateLayout(), animated: true)
+            collectionView.setCollectionViewLayout(generateLayout(), animated: true) { _ in
+                // Enable it again after animations is done
+                self.layoutBarButton.isEnabled = true
+            }
         }
     }
     
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Product>? = nil
     private var productList: [Product] = []
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Product>? = nil
+    
+    private var inFilterMode = false
+    private var filteredList: [Product] = []
     
     private lazy var layoutBarButton: UIBarButtonItem = {
         let item = UIBarButtonItem(image: UIImage(systemName: "rectangle.grid.1x2"),
@@ -48,6 +54,16 @@ class HomeVC: UIViewController, Instantiatable {
         return item
     }()
     
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController()
+        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.searchBarStyle = .minimal
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.tintColor = .black
+        return searchController
+    }()
+    
     // MARK: - View life cycle
 
     override func viewDidLoad() {
@@ -57,24 +73,9 @@ class HomeVC: UIViewController, Instantiatable {
         fetchProductList()
     }
     
-    func fetchProductList() {
-        let fetchOperation = RequestOperation(request: ServerAPI.fetchProductList, decodeType: [Product].self)
-        fetchOperation.successHandler = { [weak self] list in
-            guard let self else { return }
-            
-            self.productList = list
-            self.dataSource?.apply(snapshotForCurrentState(), animatingDifferences: true, completion: nil)
-        }
-        
-        OperationManager.shared.addOperation(fetchOperation)
-    }
-    
     // MARK: - Helper Methods
     
     private func setupUI() {
-        // Fix issue regarding large title style being collapsed on first launch
-        additionalSafeAreaInsets.top = 20
-        
         setupNavigationBar()
         setupCollectionView()
     }
@@ -113,7 +114,7 @@ class HomeVC: UIViewController, Instantiatable {
     private func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<Section, Product> {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Product>()
         snapshot.appendSections([.productList])
-        snapshot.appendItems(productList, toSection: .productList)
+        snapshot.appendItems(inFilterMode ? filteredList : productList, toSection: .productList)
         return snapshot
     }
     
@@ -134,12 +135,33 @@ class HomeVC: UIViewController, Instantiatable {
         return UICollectionViewCompositionalLayout(section: section)
     }
     
+    private func fetchProductList() {
+        let fetchOperation = RequestOperation(request: ServerAPI.fetchProductList, decodeType: [Product].self)
+        fetchOperation.successHandler = { [weak self] list in
+            guard let self else { return }
+            
+            self.productList = list
+            self.updateCollectionData()
+            self.navigationItem.searchController = searchController // Doesn't make sense to add it while no data exists so here is the right place for it
+        }
+        
+        OperationManager.shared.addOperation(fetchOperation)
+    }
+    
+    private func updateCollectionData() {
+        dataSource?.apply(snapshotForCurrentState(), animatingDifferences: true, completion: nil)
+    }
+    
     // MARK: - Target Actions
     
     @objc
     private func layoutBarButtonTapped(_ sender: UIBarButtonItem) {
         isGridLayout.toggle()
         sender.image = isGridLayout ? UIImage(systemName: "rectangle.grid.1x2") : UIImage(systemName: "square.grid.2x2")
+        
+        // Disable it until the animations finishes
+        // Cause memory leak in user tap multiple times while animation is going
+        sender.isEnabled = false
     }
     
     @objc
@@ -152,4 +174,20 @@ class HomeVC: UIViewController, Instantiatable {
 
 extension HomeVC: StoryboardBasedView {
     static var storyboard: UIStoryboard { .main }
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension HomeVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text, searchText.count >= 3  {
+            inFilterMode = true
+            filteredList = productList.filter { $0.title.contains(searchText) }
+        } else {
+            inFilterMode = false
+            filteredList = []
+        }
+        
+        updateCollectionData()
+    }
 }

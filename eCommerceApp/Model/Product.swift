@@ -5,10 +5,18 @@
 //  Created by Mark Thabit on 21/09/2023.
 //
 
-import UIKit
-import CoreData
+import Foundation
 
-class Product: NSManagedObject, Decodable {
+struct Product: Decodable {
+    
+    // MARK: - iVars
+    
+    let id: Int
+    let title: String
+    let imagePath: String
+    let price: Double
+    let desc: String
+    let category: String
     
     // MARK: - Computed Properties
     
@@ -32,16 +40,22 @@ class Product: NSManagedObject, Decodable {
     
     // MARK: - Initializers
     
-    required convenience init(from decoder: Decoder) throws {
-        self.init(context: CoreData.persistentContainer.viewContext)
-        
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        id = try container.decode(Int64.self, forKey: .id)
+        id = try container.decode(Int.self, forKey: .id)
         title = try container.decode(String.self, forKey: .title)
         imagePath = try container.decode(String.self, forKey: .imagePath)
         price = try container.decode(Double.self, forKey: .price)
         desc = try container.decode(String.self, forKey: .desc)
         category = try container.decode(String.self, forKey: .category)
+    }
+}
+
+// MARK: - Hashable
+
+extension Product: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
