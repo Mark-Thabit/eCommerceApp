@@ -100,11 +100,11 @@ class HomeVC: UIViewController, Instantiatable {
             
             if isGridLayout {
                 let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ProductGridCell.self)
-                cell.product = productList[indexPath.row]
+                cell.product = inFilterMode ? filteredList[indexPath.row] : productList[indexPath.row]
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ProductListCell.self)
-                cell.product = productList[indexPath.row]
+                cell.product = inFilterMode ? filteredList[indexPath.row] : productList[indexPath.row]
                 return cell
             }
         })
