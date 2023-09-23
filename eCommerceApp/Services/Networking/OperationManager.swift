@@ -36,7 +36,7 @@ public class OperationManager {
         guard wait else { return queue.addOperations(ops, waitUntilFinished: wait) }
         
         // Blocking main thread can cause deadlock
-        DispatchQueue.global(qos: .default).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             self.queue.addOperations(ops, waitUntilFinished: wait)
         }
     }

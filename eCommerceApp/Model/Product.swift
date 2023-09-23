@@ -66,3 +66,15 @@ extension Product: Hashable {
         hasher.combine(id)
     }
 }
+
+extension Product {
+    init() {
+        id = 0
+        title = ""
+        imagePath = ""
+        price = 0
+        desc = ""
+        category = ""
+        rating = Rating(rate: 0, count: 0)
+    }
+}

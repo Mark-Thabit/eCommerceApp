@@ -88,7 +88,7 @@ class ProductDetailsVC: UIViewController, Instantiatable {
     }
     
     @IBAction func addToCartButtonTapped(_ sender: UIButton) {
-        
+        Cart.current.addItem(with: product.id, qty: quantity)
     }
 }
 

@@ -21,4 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         return true
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        CoreData.saveContext()
+    }
 }

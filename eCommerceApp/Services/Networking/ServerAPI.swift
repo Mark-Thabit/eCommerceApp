@@ -11,6 +11,7 @@ enum ServerAPI {
     case fetchProductList
     case fetchCategoryList
     case fetchCategoryProductList(category: String)
+    case fetchProduct(id: Int)
 }
 
 extension ServerAPI: Request {
@@ -21,6 +22,7 @@ extension ServerAPI: Request {
             case .fetchProductList: "/products"
             case .fetchCategoryList: "/products/categories"
             case let .fetchCategoryProductList(category): "/products/category/\(category)"
+            case let .fetchProduct(id): "/products/\(id)"
         }
     }
     
@@ -29,6 +31,7 @@ extension ServerAPI: Request {
             case .fetchProductList: .get
             case .fetchCategoryList: .get
             case .fetchCategoryProductList: .get
+            case .fetchProduct: .get
         }
     }
     
@@ -39,6 +42,7 @@ extension ServerAPI: Request {
             case .fetchProductList: break
             case .fetchCategoryList: break
             case .fetchCategoryProductList: break
+            case .fetchProduct: break
         }
         
         return parameters

@@ -34,8 +34,25 @@ class MainTabBarController: UITabBarController {
         // Cart
         let cartNavController = UINavigationController(rootViewController: CartVC.instance)
         cartNavController.navigationBar.tintColor = .black
-        cartNavController.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "cart"), selectedImage: UIImage(systemName: "cart.fill"))
+        cartNavController.tabBarItem = UITabBarItem(title: "Cart", image: cartTabImage(isSelected: false), selectedImage: cartTabImage(isSelected: true))
         
         return [homeNavController, cartNavController]
+    }
+    
+    private func cartTabImage(isSelected: Bool) -> UIImage? {
+        let isCartEmpty = Cart.current.itemList.isEmpty
+        let image: UIImage?
+        
+        if isCartEmpty {
+            image = isSelected ? UIImage(systemName: "cart.fill") : UIImage(systemName: "cart")
+        } else {
+            image = isSelected ? UIImage(systemName: "cart.fill") : UIImage(systemName: "cart")
+        }
+        
+        return image
+    }
+    
+    private func updateCartTabImage() {
+        viewControllers?.last?.tabBarItem = UITabBarItem(title: "Cart", image: cartTabImage(isSelected: false), selectedImage: cartTabImage(isSelected: true))
     }
 }
