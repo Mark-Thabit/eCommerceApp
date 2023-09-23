@@ -12,11 +12,13 @@ class CartVC: UIViewController, Instantiatable {
     // MARK: - IBOutlets
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var totalPriceContainerView: UIView!
+    @IBOutlet var totalPriceLbl: UILabel!
     
     // MARK: - iVars
     
     private var cartItemList: [CartItem] { Cart.current.itemList }
-    private var productList: [(product: Product, qty: Int)] = []
+    private var productList: [Product] = []
     private lazy var loadingView: UIActivityIndicatorView = {
         let loadingView = UIActivityIndicatorView()
         loadingView.hidesWhenStopped = true
@@ -69,9 +71,12 @@ class CartVC: UIViewController, Instantiatable {
         let operationList = cartItemList.map { item in
             let fetchRequest = RequestOperation(request: ServerAPI.fetchProduct(id: Int(item.productId)), decodeType: Product.self)
             fetchRequest.successHandler = { product in
-                DispatchQueue.main.async {
-                    self.productList.append((product, Int(item.qty)))
-                }
+                var product = product
+                product.qty = Int(item.qty)
+                
+                // Array isn't thread-safe so need to dispatch updates to the main thread
+                // but Alamofire already dispatch its handling to main thread
+                self.productList.append(product)
             }
             
             return fetchRequest
@@ -81,15 +86,27 @@ class CartVC: UIViewController, Instantiatable {
         OperationManager.shared.addBarrierBlock {
             DispatchQueue.main.async {
                 self.loadingView.stopAnimating()
+                self.productList.sort { $0.id < $1.id } // Fix ordering issue since all product is being fetched in parallel
+                self.calculateTotalPrice()
+                self.totalPriceContainerView.isHidden = false
                 self.tableView.reloadData()
             }
         }
     }
     
     private func calculateTotalPrice() {
-        _ = productList.reduce(into: 0.0) { result, item in
-            result += item.product.price * Double(item.qty)
-        }
+        totalPriceLbl.text = productList.reduce(into: 0.0) { result, item in
+            result += item.price * Double(item.qty)
+        }.asFormattedCurrency
+    }
+    
+    // MARK: - Target Actions
+    
+    @IBAction func continueButtonTapped(_ sender: UIButton) {
+        Cart.current.reset()
+        productList.removeAll()
+        totalPriceContainerView.isHidden = true
+        tableView.reloadData()
     }
 }
 
@@ -107,7 +124,7 @@ extension CartVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CartCell.self)
         cell.delegate = self
-        cell.cartItem = productList[indexPath.row]
+        cell.product = productList[indexPath.row]
         return cell
     }
 }
@@ -117,7 +134,7 @@ extension CartVC: UITableViewDataSource {
 extension CartVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = ProductDetailsVC.instance as? ProductDetailsVC else { return }
-        vc.product = productList[indexPath.row].product
+        vc.product = productList[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -128,19 +145,22 @@ extension CartVC: CartCellDelegate {
     func cartCellDeleteTapped(_ cartCell: CartCell) {
         guard 
             let indexPath = tableView.indexPath(for: cartCell),
-            Cart.current.removeItem(with: productList[indexPath.row].product.id) // Make sure we removed it from coreData context first
+            Cart.current.removeItem(with: productList[indexPath.row].id) // Make sure we removed it from coreData context first
         else { return }
         
         tableView.beginUpdates()
         productList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
         tableView.endUpdates()
+        
+        totalPriceContainerView.isHidden = productList.isEmpty
     }
     
     func cartCell(_ cartCell: CartCell, userUpdateQuantity count: Int) {
         guard let indexPath = tableView.indexPath(for: cartCell) else { return }
         
-        cartItemList.first { $0.productId == productList[indexPath.row].product.id }?.qty = Int16(count) // Update managedObject qty value
-        // Update price
+        cartItemList.first { $0.productId == productList[indexPath.row].id }?.qty = Int16(count) // Update managedObject qty value
+        productList[indexPath.row].qty = count // Update local list for calculation of total price
+        calculateTotalPrice()
     }
 }

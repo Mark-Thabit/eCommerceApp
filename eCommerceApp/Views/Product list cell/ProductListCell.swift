@@ -53,7 +53,7 @@ class ProductListCell: UICollectionViewCell, NibReusable {
     
     private func configureCell() {
         titleLbl.text = product.title
-        priceLbl.text = product.formattedCurrency
+        priceLbl.text = product.price.asFormattedCurrency
         productImageView.sd_setImage(with: URL(string: product.imagePath)) { image, error, _, _ in
             self.loadingView.stopAnimating()
         }

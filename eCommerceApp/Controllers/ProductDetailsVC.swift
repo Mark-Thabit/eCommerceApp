@@ -72,7 +72,7 @@ class ProductDetailsVC: UIViewController, Instantiatable {
         ratingLbl.text = "\(product.rating.rate) ★"
         ratingCountLbl.text = "(\(product.rating.count))"
         productImageView.sd_setImage(with: URL(string: product.imagePath))
-        priceLbl.text = product.formattedCurrency
+        priceLbl.text = product.price.asFormattedCurrency
         descriptionLbl.text = product.desc
         quantity = 1
     }

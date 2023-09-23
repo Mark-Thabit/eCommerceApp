@@ -22,6 +22,7 @@
 		1056271C2ABD405E0093D465 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1056271B2ABD405E0093D465 /* ProductDetailsVC.swift */; };
 		1056271E2ABD424E0093D465 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1056271D2ABD424E0093D465 /* Rating.swift */; };
 		105627202ABDF8010093D465 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1056271F2ABDF8010093D465 /* Cart.swift */; };
+		105627222ABF476E0093D465 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105627212ABF476E0093D465 /* Double+Extension.swift */; };
 		10B196852ABAA54F00C8FDAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B196842ABAA54F00C8FDAD /* AppDelegate.swift */; };
 		10B1968C2ABAA54F00C8FDAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B1968A2ABAA54F00C8FDAD /* Main.storyboard */; };
 		10B1968F2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10B1968D2ABAA54F00C8FDAD /* eCommerceApp.xcdatamodeld */; };
@@ -91,6 +92,7 @@
 		1056271B2ABD405E0093D465 /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		1056271D2ABD424E0093D465 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		1056271F2ABDF8010093D465 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		105627212ABF476E0093D465 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		10B196812ABAA54F00C8FDAD /* eCommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eCommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B196842ABAA54F00C8FDAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10B1968B2ABAA54F00C8FDAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				10B196D22ABBC63500C8FDAD /* UIViewController+Extension.swift */,
 				10B196D42ABBC67A00C8FDAD /* UICollectionView+Extension.swift */,
 				105627192ABD37BE0093D465 /* UITableView+Extension.swift */,
+				105627212ABF476E0093D465 /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				105627162ABD34950093D465 /* CategoryListVC.swift in Sources */,
 				10B196EE2ABBE19F00C8FDAD /* HomeVC.swift in Sources */,
 				1037A3FA2ABCF6550038068E /* HTTPRequest.swift in Sources */,
+				105627222ABF476E0093D465 /* Double+Extension.swift in Sources */,
 				1037A4032ABD14E20038068E /* CoreData.swift in Sources */,
 				10B196FA2ABCEF7500C8FDAD /* Connectivity.swift in Sources */,
 				1037A4002ABCFA8C0038068E /* Constants.swift in Sources */,

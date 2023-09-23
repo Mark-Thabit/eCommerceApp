@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class Cart {
     
@@ -52,5 +53,16 @@ class Cart {
         
         CoreData.persistentContainer.viewContext.delete(item)
         return true
+    }
+    
+    func reset() {
+        let patchDeleteReq = NSBatchDeleteRequest(fetchRequest: CartItem.fetchRequest())
+        
+        do {
+            try CoreData.persistentContainer.viewContext.execute(patchDeleteReq)
+            itemList.removeAll()
+        } catch {
+            Logger.logError(error)
+        }
     }
 }

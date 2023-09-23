@@ -27,7 +27,7 @@ class CartCell: UITableViewCell, NibReusable {
     // MARK: - iVars
     
     weak var delegate: CartCellDelegate!
-    var cartItem: (product: Product, qty: Int)! { didSet { configureCell() } }
+    var product: Product! { didSet { configureCell() } }
     private var itemCount = 0 {
         didSet {
             guard oldValue != itemCount else { return }
@@ -65,16 +65,14 @@ class CartCell: UITableViewCell, NibReusable {
         priceLbl.font = .systemFont(ofSize: 20, weight: .bold)
     }
     
-    private func configureCell() {
-        let product = cartItem.product
-        
+    private func configureCell() {        
         itemImageView.sd_setImage(with: URL(string: product.imagePath)) { image, error, _, _ in
             self.loadingView.stopAnimating()
         }
         
         titleLbl.text = product.title
-        priceLbl.text = product.formattedCurrency
-        itemCount = cartItem.qty
+        priceLbl.text = product.price.asFormattedCurrency
+        itemCount = product.qty
     }
     
     // MARK: - Target actions

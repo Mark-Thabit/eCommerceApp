@@ -18,15 +18,7 @@ struct Product: Decodable {
     let desc: String
     let category: String
     let rating: Rating
-    
-    // MARK: - Computed Properties
-    
-    var formattedCurrency: String? {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencySymbol = "$"
-        return formatter.string(from: price as NSNumber)
-    }
+    var qty = 1
     
     // MARK: - Coding keys
     
