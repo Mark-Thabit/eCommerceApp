@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol CategoryListDelegate: AnyObject {
     func categoryListResetTapped(_ categoryList: CategoryListVC)
@@ -89,5 +90,30 @@ extension CategoryListVC: UITableViewDataSource {
 extension CategoryListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate.categoryList(self, userDidPick: categoryList[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let containerView = UIView()
+        
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "filter with category".uppercased()
+        label.textColor = .lightGray
+        label.font = .systemFont(ofSize: 12)
+        
+        containerView.addSubview(label)
+        
+        label.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview().offset(15)
+            make.trailing.equalToSuperview().offset(-15)
+            make.bottom.equalToSuperview()
+        }
+
+        return containerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
     }
 }
