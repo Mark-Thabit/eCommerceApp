@@ -77,6 +77,14 @@ class ProductDetailsVC: UIViewController, Instantiatable {
         quantity = 1
     }
     
+    private func animateAddToCart(button: UIButton) {
+        let animation = CABasicAnimation(keyPath: "transform.scale")
+        animation.fromValue = 1.1
+        animation.toValue = 1
+        animation.duration = 0.3
+        button.layer.add(animation, forKey: "scale")
+    }
+    
     // MARK: - Target Actions
     
     @IBAction func decreaseButtonTapped(_ sender: UIButton) {
@@ -89,6 +97,9 @@ class ProductDetailsVC: UIViewController, Instantiatable {
     
     @IBAction func addToCartButtonTapped(_ sender: UIButton) {
         Cart.current.addItem(with: product.id, qty: quantity)
+        
+        sender.setTitle("Added", for: .normal)
+        animateAddToCart(button: sender)
     }
 }
 
