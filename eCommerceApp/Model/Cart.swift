@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import Combine
 
 class Cart {
     
@@ -16,7 +17,7 @@ class Cart {
     
     // MARK: - iVars
     
-    var itemList: [CartItem] = []
+    @Published var itemList: [CartItem] = []
     
     // MARK: - Initializers
     
@@ -49,9 +50,10 @@ class Cart {
     }
     
     func removeItem(with id: Int) -> Bool {
-        guard let item = itemList.first(where: { $0.productId == id }) else { return false }
+        guard let index = itemList.firstIndex(where: { $0.productId == id }) else { return false }
         
-        CoreData.persistentContainer.viewContext.delete(item)
+        CoreData.persistentContainer.viewContext.delete(itemList[index])
+        itemList.remove(at: index)
         return true
     }
     
