@@ -154,6 +154,7 @@ extension CartVC: CartCellDelegate {
         tableView.endUpdates()
         
         totalPriceContainerView.isHidden = productList.isEmpty
+        calculateTotalPrice()
     }
     
     func cartCell(_ cartCell: CartCell, userUpdateQuantity count: Int) {
